@@ -1,28 +1,26 @@
 ---
 import data from "~/data.json"
 
+import "@fontsource/poppins"
 import "@assets/styles/global.css"
 
 import favIcon from "@assets/favicons/favicon.ico"
 import favIconSvg from "@assets/favicons/favicon.svg"
 import appleTouchIcon from "@assets/favicons/apple-touch-icon.png"
 
-
 // import Header from "@components/core/Header.astro"
 // import Footer from "@components/core/Footer.astro"
 
 import MySEO, { type Meta, type Schema } from "@components/core/MySEO.astro"
 
-interface Props{
-    meta: Meta,
-    schema?: Schema
+interface Props {
+  meta: Meta
+  schema?: Schema
 }
 
-const {meta, schema} = Astro.props
+const { meta, schema } = Astro.props
 
 const SITE = data.site
-
-
 ---
 
 <!doctype html>
@@ -85,7 +83,6 @@ const SITE = data.site
       />
     ) : null
   } -->
-
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -100,7 +97,7 @@ const SITE = data.site
     <!-- End Google Tag Manager (noscript) -->
 
     <div class="flex min-h-screen flex-col justify-between">
-        <!-- <Header /> -->
+      <!-- <Header /> -->
 
       <main class="mt-20">
         <slot />
@@ -110,4 +107,3 @@ const SITE = data.site
     </div>
   </body>
 </html>
-
