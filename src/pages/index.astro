@@ -1,5 +1,13 @@
 ---
+import Layout from "@layouts/Layout.astro"
+import { type Meta, type Schema } from "@components/core/MySEO.astro"
 
+const meta: Meta = {
+  title: "Meta title JASZKA",
+  description: "Meta description",
+}
 ---
 
-asdasdas
+<Layout meta={meta}>
+  <h1>Hello, Astro!</h1>
+</Layout>

@@ -1,20 +1,17 @@
-<!-- ---
-import Section from "@components/core/Section.astro"
-import Layout from "@layouts/Layout.astro"
-
+---
 import { type Meta } from "@components/core/MySEO.astro"
+import Layout from "@layouts/Layout.astro"
 
 const meta: Meta = {
   title: "500 - Błąd serwera",
   description:
     "Wystąpił błąd serwera. Spróbuj ponownie za chwilę. Przepraszamy za utrudnienia.",
-  og: false,
-  tw: false,
-  nofollow: true,
   noindex: true,
+  nofollow: true,
 }
 ---
 
 <Layout meta={meta}>
-  <Section center><h1>500. Wewnętrzny błąd serwera</h1> </Section>
-</Layout> -->
+  <h1>500. Wewnętrzny błąd serwera.</h1>
+  <a href="/" class="">Wróć na stronę główną</a>
+</Layout>

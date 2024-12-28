@@ -1,0 +1,113 @@
+---
+import data from "~/data.json"
+
+import "@assets/styles/global.css"
+
+import favIcon from "@assets/favicons/favicon.ico"
+import favIconSvg from "@assets/favicons/favicon.svg"
+import appleTouchIcon from "@assets/favicons/apple-touch-icon.png"
+
+
+// import Header from "@components/core/Header.astro"
+// import Footer from "@components/core/Footer.astro"
+
+import MySEO, { type Meta, type Schema } from "@components/core/MySEO.astro"
+
+interface Props{
+    meta: Meta,
+    schema?: Schema
+}
+
+const {meta, schema} = Astro.props
+
+const SITE = data.site
+
+
+---
+
+<!doctype html>
+<html lang={SITE.language}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href={favIcon} />
+    <link rel="icon" type="image/svg+xml" href={favIconSvg.src} />
+    <link rel="mask-icon" href={favIconSvg.src} color="#8D46E7" />
+    <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon.src} />
+
+    <!-- Sitemap -->
+    <link rel="sitemap" href={"/sitemap-index.xml"} />
+
+    <!-- Meta and schema tags -->
+    <MySEO meta={meta} schema={schema} />
+
+    <!-- RSS feed -->
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={SITE.meta["home-title"]}
+      href={`${Astro.site}rss.xml`}
+    />
+
+    <!-- Google Tag Manager -->
+    <!-- <script is:inline>
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : ""
+        j.async = true
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, "script", "dataLayer", "GTM-NVZP7BLW")
+    </script> -->
+    <!-- End Google Tag Manager -->
+
+    <!-- Google Search Console -->
+    <!-- {
+    SITE.integrations["google-search-console"] && (
+      <meta
+        name="google-site-verification"
+        content={SITE.integrations["google-search-console"]}
+      />
+    )
+  } -->
+
+    <!-- Analytics -->
+    <!-- {
+    SITE.integrations["google-analytics"] ? (
+      <GoogleAnalytics
+        id={SITE.integrations["google-analytics"]}
+        partytown={true}
+      />
+    ) : null
+  } -->
+
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <!-- <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NVZP7BLW"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden">
+      </iframe>
+    </noscript> -->
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="flex min-h-screen flex-col justify-between">
+        <!-- <Header /> -->
+
+      <main class="mt-20">
+        <slot />
+      </main>
+
+      <!-- <Footer /> -->
+    </div>
+  </body>
+</html>
+

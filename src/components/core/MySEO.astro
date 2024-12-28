@@ -1,0 +1,40 @@
+---
+import { SEO } from "astro-seo"
+import type { SEOProps } from "astro-seo"
+
+import data from "~/data.json"
+
+export interface Props {
+  meta: SEOProps
+  schema?: object
+}
+
+export type Meta = Props["meta"]
+export type Schema = Props["schema"]
+
+const { meta, schema } = Astro.props
+---
+
+<SEO
+  titleTemplate={meta.titleTemplate
+    ? meta.titleTemplate
+    : data.site.meta["meta-title-template"]}
+  canonical={meta.canonical || Astro.url.href}
+  noindex={meta.noindex || false}
+  nofollow={meta.nofollow || false}
+  charset={meta.charset || "UTF-8"} {...meta}
+/>
+
+<!-- Technology -->
+<meta name="generator" content={Astro.generator} />
+
+<!-- JSON LD (structured data) -->
+{
+  schema && Object.keys(schema).length > 0 && (
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(schema)}
+    />
+  )
+}

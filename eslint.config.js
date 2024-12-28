@@ -1,14 +1,48 @@
-import eslintPluginAstro from "eslint-plugin-astro";
+import astroEslintParser from "astro-eslint-parser"
+import eslintPluginAstro from "eslint-plugin-astro"
+
+import js from "@eslint/js"
+import tseslint from "typescript-eslint"
+import typescriptParser from "@typescript-eslint/parser"
 
 export default [
-  // add more generic rule sets here, such as:
-  // js.configs.recommended,
-  ...eslintPluginAstro.configs.recommended,
+  js.configs.recommended,
   ...eslintPluginAstro.configs["flat/recommended"],
+  ...tseslint.configs.recommended,
   {
+    rules: {},
+  },
+  {
+    files: ["**/*.astro"],
+    languageOptions: {
+      parser: astroEslintParser,
+      parserOptions: {
+        parser: "@typescript-eslint/parser",
+        extraFileExtensions: [".astro"],
+      },
+    },
+  },
+  {
+    files: ["**/*.{js,jsx,astro}"],
     rules: {
-      // override/add rules settings here, such as:
-      // "astro/no-set-html-directive": "error"
+      "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+    },
+  },
+  {
+    files: ["**/*.{ts,tsx}", "**/*.astro/*.js"],
+    languageOptions: {
+      parser: typescriptParser,
+    },
+    rules: {
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          argsIgnorePattern: "^_",
+          destructuredArrayIgnorePattern: "^_",
+        },
+      ],
+      "@typescript-eslint/no-non-null-assertion": "off",
     },
   },
   {
@@ -20,4 +54,4 @@ export default [
       ".astro",
     ],
   },
-];
+]

@@ -13,9 +13,9 @@ import sitemap from "@astrojs/sitemap"
 
 import tailwind from "@astrojs/tailwind"
 
-import data from "./data.json"
 
 import icon from "astro-icon";
+import data from "./src/data.json"
 
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))

@@ -7,6 +7,7 @@
   },
   "site": {
     "domain": "https://www.lukaszmilos.pl",
+    "language": "pl",
     "trailingSlash": "ignore",
     "meta": {
       "home-title": "Oficjalna strona Łukasza Miłoś",
