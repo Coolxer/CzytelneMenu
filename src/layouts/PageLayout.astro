@@ -14,7 +14,7 @@ const { pageTitle, pageDescription = null, meta, schema } = Astro.props
 ---
 
 <Layout meta={meta} schema={schema}>
-  <header
+  <!-- <header
     class="align-center bg-accent-darkest flex flex-col items-center px-6 py-8 text-white md:py-16">
     <div
       class="flex max-w-prose flex-col items-center justify-center gap-4 text-center">
@@ -22,7 +22,7 @@ const { pageTitle, pageDescription = null, meta, schema } = Astro.props
       {pageDescription && <p class="text-lg">{pageDescription}</p>}
       <slot name="header" />
     </div>
-  </header>
+  </header> -->
 
   <slot />
 </Layout>

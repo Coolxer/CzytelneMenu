@@ -13,7 +13,6 @@ import sitemap from "@astrojs/sitemap"
 
 import tailwind from "@astrojs/tailwind"
 
-
 import icon from "astro-icon";
 import data from "./src/data.json"
 
@@ -34,6 +33,14 @@ export default defineConfig({
     assets: "_astro",
     inlineStylesheets: "auto",
     assetsPrefix: "",
+  },
+    i18n: {
+    locales: ["es", "en", "pl"],
+    defaultLocale: "pl",
+    routing: {
+        prefixDefaultLocale: false,
+        // redirectToDefaultLocale: false
+    }
   },
   integrations: [react(), sitemap({
     filter: (page) =>
