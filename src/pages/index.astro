@@ -13,7 +13,7 @@ import Footer from "@components/core/Footer.astro"
 import { Icon } from "astro-icon/components"
 
 const meta: Meta = {
-  title: "Czytelne i łatwo dostępne menu dla Twojej restauracji i pizzerii",
+  title: "Czytelne i łatwo dostępne menu dla restauracji i pizzerii",
   description:
     "Zwiększ wygodę klientów i usprawnij zamówienia! Stwórz czytelne menu online dla swojej restauracji lub pizzerii. Sprawdź naszą ofertę!",
 }
@@ -28,15 +28,24 @@ const meta: Meta = {
         <a
           href="/"
           class="flex items-center gap-2 text-landing-darkest no-underline">
-          <Icon name="logo" class="inline text-3xl" />
-          <span class="text-xl font-bold">CzytelneMenu</span>
+          <Icon name="logo" class="text-3xl" />
+          <span class="hidden text-xl font-bold md:inline">CzytelneMenu</span>
         </a>
 
-        <a
-          href="#kontakt"
-          class="rounded-md bg-landing px-4 py-2 font-medium text-landing-darkest shadow transition-colors hover:bg-landing-dark hover:text-white">
-          Zapytaj o wdrożenie
-        </a>
+        <div class="flex gap-2">
+          <a
+            href="/bestpizza"
+            target="_blank"
+            class="rounded-md bg-landing px-4 py-2 font-medium text-landing-darkest shadow transition-colors hover:bg-landing-dark hover:text-white">
+            Zobacz przykład
+          </a>
+
+          <a
+            href="#kontakt"
+            class="rounded-md bg-black px-4 py-2 font-medium text-white shadow transition-colors hover:bg-white hover:text-black">
+            Zapytaj o wdrożenie
+          </a>
+        </div>
       </div>
     </div>
   </header>
@@ -97,7 +106,7 @@ const meta: Meta = {
     <section class="py-6">
       <div class="container mx-auto max-w-prose px-5">
         <h2 class="text-2xl font-semibold text-red-700">
-          🚨 Jakie problemy rozwiązuję dla Twojej restauracji / pizzeri?
+          🚨 Jakie problemy rozwiązuję dla Twojej restauracji / pizzerii?
         </h2>
         <div class="mt-3 rounded border-2 border-red-200 bg-red-50 p-6 shadow">
           <ul class="list-disc space-y-3 pl-6 text-lg">
