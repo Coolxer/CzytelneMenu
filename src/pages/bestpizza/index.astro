@@ -8,7 +8,8 @@ import Footer from "@components/core/Footer.astro"
 
 const meta: Meta = {
   title: "BestPizza - Najlepsza pizzeria w Borowej",
-  description: "Nasze pizzeria to najlepsze miejsce na pyszną pizzę",
+  description:
+    "Nasze pizzeria BestPizza to najlepsze miejsce na pyszną pizzę i inne potrawy.",
   noindex: true,
   nofollow: true,
 }
@@ -41,9 +42,9 @@ const categories = Object.keys(menu)
     <div class="container mx-auto max-w-3xl px-5">
       <div class="flex w-full items-center justify-between">
         <!-- Logo/name -->
-        <a href="/" class="text-xl font-bold text-black no-underline">
+        <span class="text-xl font-bold text-black no-underline">
           {data.firma.nazwa}
-        </a>
+        </span>
         <!-- Call us -->
         <a
           href="tel:123456789"

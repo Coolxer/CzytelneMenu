@@ -1,30 +1,15 @@
 {
-  "company": {
-    "name": "Łukasz Miłoś",
-    "address": "39-305 Borowa, Polska",
-    "email": ["lukasz.milos.it@gmail.com", "kontakt@lukaszmilos.pl"],
-    "phone": ["123 456 789"]
-  },
   "site": {
-    "domain": "https://www.lukaszmilos.pl",
+    "domain": "https://czytelnemenu.pl",
     "language": "pl",
     "trailingSlash": "ignore",
     "meta": {
-      "home-title": "Oficjalna strona Łukasza Miłoś",
-      "home-description": "Strona internetowa inż. IT Łukasza Miłoś ",
-      "meta-title-template": "%s - Łukasz Miłoś",
-      "og-image": {
-        "src": "/og-default.jpg",
-        "alt": "inż. IT Łukasz Miłoś"
-      }
+      "home-title": "CzytelneMenu.pl",
+      "meta-title-template": "%s - CzytelneMenu.pl"
     },
     "integrations": {
       "google-search-console": "",
       "google-analytics": ""
-    },
-    "blog": {
-      "author": "Łukasz Miłoś",
-      "itemsPerPage": 9
     },
     "placeholderImage": "/placeholder.webp"
   }
