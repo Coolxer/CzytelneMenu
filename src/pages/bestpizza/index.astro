@@ -15,7 +15,7 @@ const meta: Meta = {
 
 const schema: Schema = {}
 
-const days = {
+const days: { [key: string]: string } = {
   Pon: "Poniedziałek",
   Wto: "Wtorek",
   Sro: "Środa",
@@ -25,7 +25,13 @@ const days = {
   Nie: "Niedziela",
 }
 
-const menu = data.menu
+const menu: {
+  [key: string]: {
+    name: string
+    price: number | { standard: number; wege?: number }
+    description: string
+  }[]
+} = data.menu
 const categories = Object.keys(menu)
 ---
 
