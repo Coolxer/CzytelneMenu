@@ -1,24 +1,22 @@
 ---
 import data from "~/data.json"
 
-import "@fontsource/poppins"
 import "@assets/styles/global.css"
 
-import favIcon from "@assets/favicons/favicon.ico"
+import favIconPng from "@assets/favicons/favicon-96x96.png"
 import favIconSvg from "@assets/favicons/favicon.svg"
-import appleTouchIcon from "@assets/favicons/apple-touch-icon.png"
-
-// import Header from "@components/core/Header.astro"
-// import Footer from "@components/core/Footer.astro"
+import favIconIco from "@assets/favicons/favicon.ico"
+import favIconAppleTouch from "@assets/favicons/apple-touch-icon.png"
 
 import MySEO, { type Meta, type Schema } from "@components/core/MySEO.astro"
 
 interface Props {
   meta: Meta
   schema?: Schema
+  class?: string
 }
 
-const { meta, schema } = Astro.props
+const { meta, schema, class: className } = Astro.props
 
 const SITE = data.site
 ---
@@ -30,10 +28,12 @@ const SITE = data.site
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Favicons -->
-    <link rel="shortcut icon" href={favIcon} />
+    <link rel="icon" type="image/png" href={favIconPng.src} sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href={favIconSvg.src} />
-    <link rel="mask-icon" href={favIconSvg.src} color="#8D46E7" />
-    <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon.src} />
+    <link rel="shortcut icon" href={favIconIco} />
+    <link rel="apple-touch-icon" sizes="180x180" href={favIconAppleTouch.src} />
+    <meta name="apple-mobile-web-app-title" content="CzytelneMenu" />
+    <link rel="manifest" href="/src/assets/favicons/site.webmanifest" />
 
     <!-- Sitemap -->
     <link rel="sitemap" href={"/sitemap-index.xml"} />
@@ -50,29 +50,6 @@ const SITE = data.site
     />
 
     <!-- Google Tag Manager -->
-    <!-- <script is:inline>
-      ;(function (w, d, s, l, i) {
-        w[l] = w[l] || []
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" })
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : ""
-        j.async = true
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl
-        f.parentNode.insertBefore(j, f)
-      })(window, document, "script", "dataLayer", "GTM-NVZP7BLW")
-    </script> -->
-    <!-- End Google Tag Manager -->
-
-    <!-- Google Search Console -->
-    <!-- {
-    SITE.integrations["google-search-console"] && (
-      <meta
-        name="google-site-verification"
-        content={SITE.integrations["google-search-console"]}
-      />
-    )
-  } -->
 
     <!-- Analytics -->
     <!-- {
@@ -86,27 +63,17 @@ const SITE = data.site
   </head>
   <body class="">
     <!-- Google Tag Manager (noscript) -->
-    <!-- <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-NVZP7BLW"
-        height="0"
-        width="0"
-        style="display:none;visibility:hidden">
-      </iframe>
-    </noscript> -->
-    <!-- End Google Tag Manager (noscript) -->
 
-    <div class="flex min-h-screen flex-col justify-between">
-      <!-- <Header /> -->
-
-      <main>
-        <slot />
-      </main>
-
-      <!-- <Footer /> -->
+    <div class:list={["flex min-h-screen flex-col justify-between", className]}>
+      <slot />
     </div>
+
+    <!-- 100% privacy-first analytics -->
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"
+    ></script>
   </body>
 </html>
+
 <script is:inline>
   const theme = (() => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {

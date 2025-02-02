@@ -1,3 +1,55 @@
+@import "@fontsource/poppins";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* BASE STYLES */
+@layer base {
+  html {
+    @apply scroll-pt-28 text-[16px] leading-none;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-black antialiased;
+  }
+
+  p,
+  div {
+    @apply text-base;
+  }
+
+  p {
+    @apply text-gray-800;
+  }
+
+  strong,
+  b {
+    @apply font-bold;
+  }
+}
+
+/* ANIMATIONS */
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    animation: fadein linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+  }
+
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+      transform: translatey(100px);
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: translatey(0px);
+    }
+  }
+}

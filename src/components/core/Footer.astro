@@ -1,0 +1,28 @@
+---
+const year = new Date().getFullYear()
+---
+
+<footer class="bg-black px-5 py-4 text-center text-white">
+  <div
+    class="grid w-full grid-cols-2 items-center justify-between gap-4 md:grid-cols-3">
+    <div class="hidden md:block"></div>
+    <div class="inline">
+      © <span id="footer-year">{year}</span>. Strona stworzona przez <a
+        class="text-underline text-bestpizza hover:text-bestpizza-dark"
+        href="/">
+        CzytelneMenu.pl
+      </a>
+    </div>
+    <a
+      href="/polityka-prywatnosci"
+      rel="noreferrer"
+      target="_blank"
+      class="text-underline text-bestpizza hover:text-bestpizza-dark">
+      Polityka prywatności
+    </a>
+  </div>
+</footer>
+
+<script is:inline>
+  document.getElementById("footer-year").innerText = new Date().getFullYear()
+</script>

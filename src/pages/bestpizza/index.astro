@@ -1,0 +1,292 @@
+---
+import Layout from "@layouts/Layout.astro"
+import { type Meta, type Schema } from "@components/core/MySEO.astro"
+import { Icon } from "astro-icon/components"
+
+import data from "./data.json"
+import Footer from "@components/core/Footer.astro"
+
+const meta: Meta = {
+  title: "BestPizza - Najlepsza pizzeria w Borowej",
+  description: "Nasze pizzeria to najlepsze miejsce na pyszną pizzę",
+  noindex: true,
+  nofollow: true,
+}
+
+const schema: Schema = {}
+
+const days = {
+  Pon: "Poniedziałek",
+  Wto: "Wtorek",
+  Sro: "Środa",
+  Czw: "Czwartek",
+  Pia: "Piątek",
+  Sob: "Sobota",
+  Nie: "Niedziela",
+}
+
+const menu = data.menu
+const categories = Object.keys(menu)
+---
+
+<Layout meta={meta} schema={schema}>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-bestpizza-light py-2 shadow">
+    <div class="container mx-auto max-w-3xl px-5">
+      <div class="flex w-full items-center justify-between">
+        <!-- Logo/name -->
+        <a href="/" class="text-xl font-bold text-black no-underline">
+          {data.firma.nazwa}
+        </a>
+        <!-- Call us -->
+        <a
+          href="tel:123456789"
+          class="rounded-md bg-bestpizza px-4 py-2 font-medium text-white shadow transition-colors hover:bg-bestpizza-dark">
+          Zadzwoń: {data.firma.kontakt.telefon}
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main>
+    <!-- Banner -->
+    <section id="baner" class="py-8">
+      <div class="container mx-auto max-w-3xl px-5">
+        <div
+          class="relative rounded-lg bg-[url(/src/assets/images/bestpizza.webp)] bg-cover bg-clip-border bg-center bg-no-repeat bg-origin-border py-12 shadow-md md:py-20">
+          <!-- Overlay -->
+          <div
+            class="absolute inset-0 rounded-lg bg-gradient-to-b from-slate-800/50 to-slate-900/50">
+          </div>
+
+          <div
+            class="relative z-10 flex h-full flex-col items-center justify-center gap-2 px-12 text-center text-white">
+            <h1 class="text-3xl font-bold md:text-4xl">
+              BestPizza - Pizzeria w Borowej
+            </h1>
+            <p class="text-md text-slate-100 md:text-lg">
+              Zapraszamy na pyszną pizzę
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu header and buttons -->
+    <section id="menu" class="py-8">
+      <div class="container mx-auto max-w-3xl px-5">
+        <div class="mb-8 flex flex-col gap-2">
+          <h2 class="text-center text-2xl font-bold md:text-3xl">Nasze menu</h2>
+          <div class="flex flex-wrap items-center justify-start gap-2">
+            {
+              categories.map((category) => (
+                <a
+                  href={`#${category}`}
+                  class="bg-bestpizza-light px-4 py-2 text-black shadow transition-all hover:bg-bestpizza hover:text-white">
+                  {category.replace("_", " ")}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+
+        <!--- Menu categories --->
+        <div class="flex flex-col gap-16">
+          {
+            categories.map((category) => (
+              <div id={category}>
+                <h3 class="mb-4 text-xl font-semibold md:text-2xl">
+                  {category.replace("_", " ")}
+                </h3>
+                <div class="flex flex-col gap-8">
+                  {Array.isArray(menu[category]) &&
+                    menu[category].map((item) => (
+                      <div class="flex flex-col flex-nowrap items-start justify-center">
+                        <div class="flex w-full items-center justify-between gap-8">
+                          <h4 class="text-lg font-medium">{item.name}</h4>
+                          <div class="flex-1 border-b border-slate-300" />
+                          <div class="text-nowrap text-right text-lg font-bold">
+                            {typeof item.price === "object"
+                              ? `${item.price.standard} zł${item.price.wege ? ` / ${item.price.wege} zł` : ""}`
+                              : `${item.price} zł`}
+                          </div>
+                        </div>
+
+                        <div class="w-3/4">
+                          {" "}
+                          <p class="text-base text-slate-600">
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="py-8">
+      <div class="container mx-auto max-w-3xl px-5">
+        <div
+          class="grid grid-cols-1 gap-4 rounded-lg bg-black p-8 text-white shadow-md lg:grid-cols-3">
+          <div class="flex flex-col gap-2 lg:col-span-2">
+            <h2 class="text-2xl md:text-3xl">Zamów coś dobrego!</h2>
+            <p class="text-slate-300">
+              A jeśli często u nas zamawiasz i chcesz mieć menu pod reką, to
+              pobierz i wydrukuj menu
+            </p>
+          </div>
+          <div
+            class="flex w-full flex-col items-stretch justify-start gap-4 sm:flex-row lg:flex-col">
+            <a
+              href="tel:123456789"
+              class="rounded-md border-2 border-bestpizza bg-bestpizza px-4 py-2 text-center font-medium text-white shadow transition-colors hover:border-bestpizza-dark hover:bg-bestpizza-dark">
+              Zadzwoń i zamów
+            </a>
+            <a
+              href="#"
+              class="rounded-md border-2 border-white px-4 py-2 text-center font-medium text-white shadow transition-colors hover:bg-white hover:text-black">
+              Pobierz menu
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-8">
+      <div class="container mx-auto max-w-3xl px-5">
+        <div class="flex flex-col gap-8">
+          <h2 class="text-2xl md:text-3xl">
+            Odwiedź nas na miejscu lub zamów z dostawą do domu
+          </h2>
+
+          <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
+            <div class="flex flex-col gap-4">
+              <div class="flex flex-col items-start">
+                <div class="flex items-center gap-1">
+                  <Icon name="tabler:location" class="size-5" />
+
+                  <h3 class="text-lg font-bold">Adres</h3>
+                </div>
+
+                <div class="text-slate-600">
+                  {data.firma.nazwa},
+                  {data.firma.adres}
+                </div>
+                <div class="mt-2 w-full border-b border-slate-300 md:w-3/4">
+                </div>
+              </div>
+
+              <div class="flex flex-col items-start">
+                <div class="flex items-center gap-1">
+                  <Icon name="tabler:phone" class="size-5" />
+
+                  <h3 class="text-lg font-bold">Telefon</h3>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <span class="text-slate-600">
+                    {data.firma.kontakt.telefon}
+                  </span>
+                  <a
+                    href="tel:123456789"
+                    class="text-bestpizza underline hover:text-bestpizza-dark">
+                    Zadzwoń
+                  </a>
+                </div>
+                <div class="mt-2 w-full border-b border-slate-300 md:w-3/4">
+                </div>
+              </div>
+
+              <div class="flex flex-col items-start">
+                <div class="flex items-center gap-1">
+                  <Icon name="tabler:mail" class="size-5" />
+
+                  <h3 class="text-lg font-bold">E-mail</h3>
+                </div>
+
+                <div class="text-slate-600">
+                  {data.firma.kontakt.email}
+                </div>
+                <div class="mt-2 w-full border-b border-slate-300 md:w-3/4">
+                </div>
+              </div>
+
+              <!-- Social media} -->
+              {
+                data.firma.media && (
+                  <div class="flex gap-2">
+                    {Object.entries(data.firma.media).map(([platform, url]) => {
+                      if (!url) return null
+
+                      const icons = {
+                        facebook: "tabler:brand-facebook",
+                        instagram: "tabler:brand-instagram",
+                        youtube: "tabler:brand-youtube",
+                      }
+
+                      return (
+                        <a
+                          href={url}
+                          rel="nofollow"
+                          target="_blank"
+                          class="flex size-10 items-center justify-center rounded-full bg-bestpizza-lightest/50 p-2 shadow-sm hover:bg-bestpizza-lightest">
+                          <Icon
+                            name={icons[platform as keyof typeof icons]}
+                            class="size-5"
+                          />
+                        </a>
+                      )
+                    })}
+                  </div>
+                )
+              }
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center gap-1">
+                <Icon name="tabler:clock-hour-4" class="size-5" />
+
+                <h3 class="text-lg font-bold">Godziny otwarcia</h3>
+              </div>
+              <ul class="list-inside list-disc">
+                {
+                  Object.entries(data.firma.otwarte).map(([day, hours]) => (
+                    <li class="mb-1 flex items-center justify-between last:mb-0">
+                      <span class="mr-2">{days[day]}</span>
+                      <span class="text-slate-600">{hours}</span>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+          </div>
+
+          <div class="">
+            <iframe
+              class="aspect-video w-full rounded-lg shadow-md"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20354.43930841592!2d21.326014425163123!3d50.37951424831693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473d4287f8835f8b%3A0xc2a279b0d638c9dd!2s39-305%20Borowa!5e0!3m2!1spl!2spl!4v1738220776506!5m2!1spl!2spl"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <Footer />
+</Layout>
+
+<script is:inline>
+  document.getElementById("footer-year").innerText = new Date().getFullYear()
+</script>

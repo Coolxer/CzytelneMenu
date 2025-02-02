@@ -2,14 +2,457 @@
 import Layout from "@layouts/Layout.astro"
 import { type Meta, type Schema } from "@components/core/MySEO.astro"
 
+import { Image } from "astro:assets"
+
+import hero from "@assets/images/landing/hero.webp"
+import show1 from "@assets/images/landing/czytelnemenu-1.webp"
+import show2 from "@assets/images/landing/czytelnemenu-2.webp"
+import show3 from "@assets/images/landing/czytelnemenu-3.webp"
+
+import Footer from "@components/core/Footer.astro"
+import { Icon } from "astro-icon/components"
 
 const meta: Meta = {
-  title: "Meta title",
+  title: "Czytelne i łatwo dostępne menu dla Twojej restauracji i pizzerii",
   description: "Meta description",
 }
 ---
 
+<Layout meta={meta} class="bg-landing-lightest/35 selection:bg-landing">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-landing-lightest py-2 shadow">
+    <div class="container mx-auto max-w-prose px-5">
+      <div class="flex w-full items-center justify-between">
+        <!-- Logo/nazwa restauracji -->
+        <a
+          href="/"
+          class="flex items-center gap-2 text-landing-darkest no-underline">
+          <Icon name="logo" class="inline text-3xl" />
+          <span class="text-xl font-bold">CzytelneMenu</span>
+        </a>
 
-<Layout meta={meta}>
-  <h1>Hello world</h1>
+        <a
+          href="#kontakt"
+          class="rounded-md bg-landing px-4 py-2 font-medium text-landing-darkest shadow transition-colors hover:bg-landing-dark hover:text-white">
+          Zapytaj o wdrożenie
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main>
+    <section class="py-8 pt-16">
+      <div class="container mx-auto max-w-prose px-5">
+        <h1 class="text-center text-4xl font-bold md:text-5xl">
+          Czytelne i łatwo dostępne <span class="">menu</span> dla restauracji lub
+          pizzerii
+        </h1>
+        <p class="mt-4 text-center text-xl md:text-2xl">
+          Spraw, by Twoi klienci mogli łatwo wybrać i zamówić u Ciebie posiłek.
+        </p>
+        <Image
+          src={hero}
+          alt="Czytelne i wygodne menu dla Twojej restauracji lub pizzerii"
+          class="mt-6 aspect-video w-full rounded-lg object-cover object-top"
+        />
+      </div>
+    </section>
+
+    <section class="py-6">
+      <div class="container mx-auto max-w-prose px-5">
+        <h2 class="text-2xl font-semibold">
+          🍕 Masz restaurację, pizzerię lub sprzedajesz jedzenie na wynos?
+        </h2>
+        <p class="mt-3 text-lg">
+          Zastanów się czy Twoje menu nie jest trudne do znalezienia lub
+          nieczytelne, bo możesz tracić klientów od razu lub niezadowoleni już
+          nie powrócą, a co gorsza wystawią negatywną opinię.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-6">
+      <div class="container mx-auto max-w-prose px-5">
+        <h2 class="text-2xl font-semibold">
+          🤔 To problem i przykład z życia wzięty ...
+        </h2>
+        <p class="mt-3 text-lg">
+          Ostatnio chcąc zamówić pizzę w małej miejscowości miałem do wyboru 2
+          lokale. Oba bez strony internetowej czy innych systemów, ale z
+          fanpage'ami.
+        </p><p class="mt-3 text-lg">
+          Na pierwszym nie znalazłem menu w ogóle. Szukałem w postach,
+          zdjęciach, ale nic z tego.
+        </p><p class="mt-3 text-lg">
+          Drugi miał podpięte menu, ale bardzo nieczytelne, na tyle, że musiałem
+          pobrać je na komputerze i przybliżać, by móc wybrać, co zamówić.
+        </p><p class="mt-3 text-lg font-semibold">
+          Postanowiłem to zmienić i stąd to rozwiązanie !
+        </p>
+      </div>
+    </section>
+
+    <section class="py-6">
+      <div class="container mx-auto max-w-prose px-5">
+        <h2 class="text-2xl font-semibold text-red-700">
+          🚨 Jakie problemy rozwiązuję dla Twojej restauracji / pizzeri?
+        </h2>
+        <div class="mt-3 rounded border-2 border-red-200 bg-red-50 p-6 shadow">
+          <ul class="list-disc space-y-3 pl-6 text-lg">
+            <li>
+              <strong>Brak strony internetowej i Facebooka</strong> – klienci nie
+              mają gdzie sprawdzić Twojej oferty. To się zdarza!
+            </li>
+            <li>
+              <strong>Masz Facebooka, ale menu trudno znaleźć</strong> – ginie w
+              postach, a klienci muszą się przekopywać i go szukać.
+            </li>
+            <li>
+              <strong>
+                NIewyraźne i mało czytelne menu jako zdjęcie na Facebooku
+              </strong> – małe, niewyraźne, trzeba je przybliżać, przesuwać i wytężać
+              wzrok. Na komputerze to problem, a na telefonie to prawdziwa męczarnia!
+            </li>
+            <li>
+              <strong>Nie chcesz bardziej kompletnych rozwiązań</strong> – nie masz
+              czasu, chęci lub budżetu na wdrażanie kompleksowych rozwiązań dla restauracji.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-6">
+      <div class="container mx-auto max-w-prose px-5">
+        <h2 class="text-2xl font-semibold">
+          ⚒️ Moje rozwiązanie: Proste, wygodne i czytelne menu w formie mini
+          strony internetowej
+        </h2>
+        <p class="mt-3 text-lg">
+          Tworzę dla Ciebie prostą dedykowaną stronę internetową w moim
+          serwisie, której głównym celem jest prezentacja Twojego menu w
+          czytelnej i estetycznej formie. Na każdym urządzeniu.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-6">
+      <div class="container mx-auto max-w-prose px-5">
+        <h2 class="text-2xl font-semibold">📄 Jak to działa?</h2>
+        <ol class="mt-3 list-decimal space-y-3 pl-6 text-lg">
+          <li>Konwertuję Twoje menu do nowoczesnego formatu.</li>
+          <li>
+            Tworzę dedykowaną podstronę internetową w moim serwisie: <strong>
+              www.domena.pl/twoja-restauracja
+            </strong>.
+          </li>
+          <li>
+            Udostępniasz link do menu na Facebooku, w Google i innych wybranych
+            miejscach.
+          </li>
+          <li>
+            Twoi klienci cieszą się czytelnym i wygodnym menu, a Ty dostajesz
+            lepsze opinie i więcej klientów.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="py-6">
+      <div class="container mx-auto max-w-prose px-5">
+        <h2 class="text-2xl font-semibold">🖼️ Zobacz przykład</h2>
+        <p class="mt-3 text-lg">
+          Tak wygląda standardowe menu w moim serwisie (fragmenty):
+        </p>
+
+        <div class="">
+          <Image
+            src={show1}
+            alt=""
+            class="mt-8 w-full rounded-lg border border-slate-100 object-cover shadow"
+          />
+          <Image
+            src={show2}
+            alt=""
+            class="mt-8 w-full rounded-lg border border-slate-100 object-cover shadow"
+          />
+          <Image
+            src={show3}
+            alt=""
+            class="mt-8 w-full rounded-lg border border-slate-100 object-cover shadow"
+          />
+        </div>
+
+        <p class="mt-4 text-xl font-semibold text-black">Opis:</p>
+        <p class="mt-3 text-lg">
+          Przyklejony nagłówek z nazwą restauracji i z przyciskiem do
+          dzwonienia, by można było łatwo złożyć zamówienie.
+        </p>
+
+        <p class="mt-3 text-lg">
+          Sekcja z obrazem, nagłówkiem ze słowem kluczowym i krótką sentencją
+          dodaje uroku i wpływa na pozycjonowanie.
+        </p>
+
+        <p class="mt-3 text-lg">
+          Poniżej znajduje się menu z przyciskami przenoszącymi do
+          poszczególnych sekcji menu i wreszcie samo menu. Czyste, schludne i
+          przejrzyste.
+        </p>
+
+        <p class="mt-3 text-lg">
+          Pod menu jest zachęcenie do zamówienia. Na końcu znajduje się sekcja
+          kontaktowa i godziny otwarcia oraz lokalizacja, by jeszcze bardziej
+          wszystko ułatwić.
+        </p>
+
+        <h3 class="mt-4 text-xl font-semibold">Ciekawe?</h3>
+
+        <div class="mt-2 flex gap-4">
+          <a
+            href="/bestpizza"
+            target="_blank"
+            class="flex-1 rounded-md border-2 border-transparent bg-landing px-4 py-2 text-center font-medium text-landing-darkest shadow transition-colors hover:bg-landing-dark hover:text-white">
+            Zobacz na żywo
+          </a>
+          <a
+            href="#kontakt"
+            class="flex-1 rounded-md border-2 border-black px-4 py-2 text-center font-medium text-black shadow transition-colors hover:bg-black hover:text-white">
+            Zapytaj o wdrożenie
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-6">
+      <div class="container mx-auto max-w-prose px-5">
+        <h2 class="text-2xl font-semibold text-green-700">✅ Co zyskujesz?</h2>
+        <div
+          class="mt-3 rounded border-2 border-green-200 bg-green-50 p-6 shadow">
+          <ul class="list-disc space-y-3 pl-6 text-lg">
+            <li>
+              <strong>Menu dostępne na każdym urządzeniu</strong> – łatwo czytelne
+              na telefonie, tablecie i komputerze.
+            </li><li>
+              <strong>Prosta nawigacja i kontakt</strong> – oprócz menu, umieszczone
+              są także dane kontaktowe i opcja dzownienia, które ułatwiają zamówienie.
+            </li>
+            <li>
+              <strong>Łatwa aktualizacja menu</strong> – zmiany wdrażam za Ciebie.
+            </li>
+            <li>
+              <strong>Więcej zadowolonych klientów</strong> – klienci chętniej i
+              częściej u Ciebie zamawiają, bo staje się to proste.
+            </li>
+            <li>
+              <strong>Uniwersalność wykorzystania</strong> – menu możesz udostępnić
+              na facebooku lub profilu firmowym w Google, przesłać link, lub wygenerować
+              kod QR i wydrukować! Co tylko zechcesz.
+            </li>
+
+            <li>
+              <strong>Opcja indeksowania i optymalizacja Google (SEO)</strong>
+              – mogę zoptymalizować i dodać Twoje menu do wyszukiwarki, dzięki czemu
+              więcej klientów może Cię odnaleźć w sieci.
+            </li>
+
+            <li>
+              <strong>Unikalny wygląd dopasowany do Twojej marki</strong>– mogę
+              dostosować wygląd do Twoich potrzeb, zmieniając styl i dodając
+              zdjęcia lub dodać dodatkowe elementy.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-6">
+      <div class="container mx-auto max-w-prose px-5">
+        <h2 class="text-2xl font-semibold text-yellow-700">
+          💰 Ile to kosztuje?
+        </h2>
+        <div
+          class="mt-3 rounded border-2 border-yellow-200 bg-yellow-50 p-6 shadow">
+          <ul class="space-y-3 text-lg">
+            <li>
+              <strong>Wdrożenie:</strong> 500 zł jednorazowo (przy standardowym projekcie).
+              <p class="text-slate-600">
+                Jeśli potrzebujesz modyfikacji, niestandardowych elementów, to
+                umawiamy się indywidualnie.
+              </p>
+            </li>
+            <li>
+              <strong>Utrzymanie:</strong> 100 zł rocznie (serwer, domena, prace).
+              <p class="text-slate-600">
+                Są to stałe roczne opłaty, ale niskiej wartości, które są
+                konieczne, by utrzymać serwis. W każdej chwilii możesz
+                zrezygnować.
+              </p>
+            </li>
+            <li>
+              <strong>Zmiany w menu:</strong>
+              <ul class="mt-2 list-disc pl-6 text-sm">
+                <li>
+                  <strong>Małe zmiany</strong> (np. ceny, usunięcie pozycji) –
+                  <strong>gratis</strong> (przy niewielkiej ilości).
+                </li>
+                <li>
+                  <strong>Duże zmiany lub aktualizacja menu</strong> – <strong>
+                    100 zł
+                  </strong> (raz na rok lub kilka lat).
+                </li>
+                <li>
+                  <strong>Zmiany w wyglądzie</strong> – <strong>
+                    indywidualnie
+                  </strong>.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-6">
+      <div class="container mx-auto max-w-prose px-5">
+        <h2 class="text-2xl font-semibold">📈 Plany rozwojowe na przyszłość</h2>
+        <p class="mt-3 text-lg">
+          Niektóre z rozważanych planów na rozwój serwisu. Jestem otwarty na
+          inne sugestie.
+        </p>
+        <ul class="mt-3 list-disc space-y-3 pl-6 text-lg">
+          <li>Udostępnienie panelu do samodzielnej edycji menu (dane)</li>
+          <li>Automatyczne generowanie kodu QR do menu</li>
+
+          <li>
+            Tworzenie klasycznego menu na podstawie danych, by jeszcze bardziej
+            uprościć aktualizację menu
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="py-6">
+      <div class="container mx-auto max-w-prose px-5">
+        <h2 class="text-2xl font-semibold">
+          👉 Masz już stronę, ale brakuje Ci czytelnego menu?
+        </h2>
+        <p class="mt-3 text-lg">
+          Mogę pomóc! Wdrożę rozwiązanie na Twoją stronę.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-6">
+      <div class="container mx-auto max-w-prose px-5">
+        <h2 class="text-2xl font-semibold">
+          👉Chcesz pełną stronę internetową dla swojej restauracji lub
+          pizzerii??
+        </h2>
+        <p class="mt-3 text-lg">
+          Również mogę się tym zająć – dostosuję ją do Twoich potrzeb.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-6">
+      <div class="container mx-auto max-w-prose px-5">
+        <h2 class="text-2xl font-semibold text-slate-700">
+          ❓ FAQ – Najczęściej zadawane pytania
+        </h2>
+        <div
+          class="mt-3 rounded border-2 border-slate-200 bg-slate-50 p-6 shadow">
+          <h3 class="mt-4 text-xl font-semibold">
+            Czym to się różni od pełnej strony internetowej?
+          </h3>
+          <p class="mt-2">
+            To jest w zasadzie strona internetowa, ale bardzo uproszczona i
+            skupiona głównie na prezentaci menu. Oprócz tego posiada podstawowe
+            informacje o Twojej restauracji i możliwość kontaktu. Natomiast
+            pełnoprawna strona internetowa prawdopodobnie miałaby także zdjęcia
+            lokalu, jego historię, opis imprez okolicznościowych (dla
+            restauracji), kilka przykładowych opinii klientów, itp. Jeśli tego
+            chcesz, to mogę także pomóc.
+          </p>
+
+          <h3 class="mt-4 text-xl font-semibold">
+            Powiesz: przecież są już takie rozwiązania i ja ich nie potrzebuje!
+          </h3>
+          <p class="mt-2">
+            To zupełnie coś innego. Wiadomo, mógłbyś mieć własny system POS,
+            aplikacje, czy stronę internetową lub skorzystać z systemów
+            pośredniczących i dostarczających jedzenie, ale z jakiegoś powodu
+            ich jeszcze nie masz. Może dlatego, że to wszystko więcej kosztuje,
+            wymaga zmian procedur, procesów, czasu i zaangażowania. Ja chcę Ci
+            zaproponować coś prostego i skutecznego, co można wdrożyć szybko.
+          </p>
+
+          <h3 class="mt-4 text-xl font-semibold">
+            Kto jest właścicielem strony?
+          </h3>
+          <p class="mt-2">
+            Strona przechowywana i zarządzana jest przeze mnie dla Twojej wygody
+            (domena, hosting, technologia). Jeśli chcesz coś zmienić, po prostu
+            daj mi znać. Jeśli chcesz pełnoprawną stronę internetową, to mogę ją
+            dla Ciebie przygotować.
+          </p>
+
+          <h3 class="mt-4 text-xl font-semibold">
+            Czy na stronie są też inne menu?
+          </h3>
+          <p class="mt-2">
+            Tak, w obrębie strony są też inne menu. Działa to w ten sposób, że
+            każda restauracja ma swoją dedykowaną podstronę w obrębie serwisu,
+            np. www.domena.pl/restauracja-1 , www.domena.pl/restauracja-2, ale
+            nie ma listy tych menu, więc nie powinno to stanowić problemu. Jeśli
+            wolałbyś(aś) jednak oddzielną stronę, to mogę Ci w tym pomóc.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="py-6">
+      <div class="container mx-auto max-w-prose px-5">
+        <h2 class="text-2xl font-semibold">
+          💬 Skontaktuj się w celu zapytania lub wdrożenia
+        </h2>
+
+        <div class="mt-2 rounded-md border-2 border-slate-200 p-4 shadow">
+          <iframe
+            data-tally-src="https://tally.so/embed/mJeDrX?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            width="100%"
+            height="402"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="Lead generation form">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <Footer />
 </Layout>
+
+<script is:inline>
+  var d = document,
+    w = "https://tally.so/widgets/embed.js",
+    v = function () {
+      "undefined" != typeof Tally
+        ? Tally.loadEmbeds()
+        : d
+            .querySelectorAll("iframe[data-tally-src]:not([src])")
+            .forEach(function (e) {
+              e.src = e.dataset.tallySrc
+            })
+    }
+  if ("undefined" != typeof Tally) v()
+  else if (d.querySelector('script[src="' + w + '"]') == null) {
+    var s = d.createElement("script")
+    ;(s.src = w), (s.onload = v), (s.onerror = v), d.body.appendChild(s)
+  }
+</script>

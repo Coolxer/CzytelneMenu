@@ -1,0 +1,168 @@
+{
+  "firma": {
+    "nazwa": "Bestpizza",
+    "adres": "ul. Borowska 5, Borowa",
+    "otwarte": {
+      "Pon": "12:00 - 20:00",
+      "Wto": "12:00 - 20:00",
+      "Sro": "12:00 - 20:00",
+      "Czw": "12:00 - 20:00",
+      "Pia": "12:00 - 22:00",
+      "Sob": "12:00 - 22:00",
+      "Nie": "nieczynne"
+    },
+    "dostawa": {
+      "koszt:": 10,
+      "zasieg": 5,
+      "godziny": "Codziennie 12:00 - 21:00"
+    },
+    "kontakt": {
+      "telefon": "123 456 789",
+      "email": "bestpizza@gmail.com"
+    },
+
+    "media": {
+      "facebook": "https://www.facebook.com/bestpizza",
+      "instagram": "https://www.instagram.com/bestpizza",
+      "youtube": "https://www.youtube.com/bestpizza"
+    }
+  },
+  "menu": {
+    "Przystawki": [
+      {
+        "name": "Talerz wędlin hiszpańskich",
+        "price": 52,
+        "description": "Podawany z pieczywem maślanem i chutney z pomarańczy"
+      },
+      {
+        "name": "Focaccia z czosnkiem i rozmarynem",
+        "price": 25,
+        "description": "Focaccia z czosnkiem, oliwkami Kalamata i świeżym rozmarynem"
+      },
+      {
+        "name": "Focaccia z burratą i pomidorkami",
+        "price": 34,
+        "description": "Focaccia z burratą, pomidorkami koktajlowymi, czosnkiem i bazylią"
+      },
+      {
+        "name": "Oliwki czarne Kalamata",
+        "price": 17,
+        "description": "Z dodatkiem oregano i oliwy z oliwek"
+      }
+    ],
+    "Sałatki": [
+      {
+        "name": "Sałatka z halloumi",
+        "price": {
+          "standard": 38,
+          "wege": 36
+        },
+        "description": "Sałata lodowa / grillowane halloumi / granat / orzechy włoskie / dressing balsamiczny"
+      },
+      {
+        "name": "Sałatka z wędzonym łososiem",
+        "price": {
+          "standard": 40,
+          "wege": 37
+        },
+        "description": "Rukola / wędzony łosoś / awokado / czerwona cebula / pomidorki / dressing cytrynowy"
+      }
+    ],
+    "Pizze Tradycyjne": [
+      {
+        "name": "Margherita z truflami",
+        "price": 42,
+        "description": "Pomidory San Marzano / Mozzarella Fior di Latte / oliwa truflowa / świeża bazylia"
+      },
+      {
+        "name": "Marinara z anchois",
+        "price": 31,
+        "description": "Pomidory San Marzano / czosnek / oregano / anchois / oliwa"
+      },
+      {
+        "name": "Salame Piccante",
+        "price": 46,
+        "description": "Pomidory San Marzano / Mozzarella Fior di Latte / Salami Piccante / świeża bazylia / oliwa"
+      },
+      {
+        "name": "Prosciutto e Funghi z rukolą",
+        "price": 45,
+        "description": "Pomidory San Marzano / Mozzarella Fior di Latte / Prosciutto Crudo / pieczarki / świeża rukola"
+      },
+      {
+        "name": "Capricciosa deluxe",
+        "price": 49,
+        "description": "Pomidory San Marzano / Mozzarella Fior di Latte / Salami Napoli / Prosciutto Crudo / karczochy / pieczarki / oliwki Kalamata / świeża bazylia"
+      },
+      {
+        "name": "Parma Rossa",
+        "price": 50,
+        "description": "Pomidory San Marzano / Mozzarella Fior di Latte / Parmigiano Reggiano DOP / Prosciutto Crudo / rukola / suszone pomidory"
+      },
+      {
+        "name": "Diavola z papryczkami chili",
+        "price": 47,
+        "description": "Pomidory San Marzano / Mozzarella Fior di Latte / Spianata Piccante / świeża papryczka chili / oliwa"
+      },
+      {
+        "name": "Vegetariana z pesto",
+        "price": 46,
+        "description": "Pomidory San Marzano / Mozzarella Fior di Latte / pieczarki / bakłażan / cukinia / pasta z karczochów / świeża bazylia / oliwa"
+      },
+      {
+        "name": "Burrata z pomidorkami balsamicznymi",
+        "price": 49,
+        "description": "Pomidory San Marzano / Mozzarella Burrata / pomidorki pieczone w balsamico / rukola / oliwa"
+      }
+    ],
+    "Pizze Białe": [
+      {
+        "name": "Truffle Delight",
+        "price": 50,
+        "description": "Mozzarella Fior di Latte / grzyby leśne / oliwa truflowa / świeży tymianek"
+      },
+      {
+        "name": "Cotto e Funghi",
+        "price": 49,
+        "description": "Mozzarella Fior di Latte / prosciutto cotto / pieczarki / świeża bazylia"
+      },
+      {
+        "name": "Funky Mortadella",
+        "price": 51,
+        "description": "Mozzarella Fior di Latte / Mortadella / pistacje / pomidorki / pesto bazyliowe / oliwa"
+      },
+      {
+        "name": "Bianca Piccante z ndują",
+        "price": 48,
+        "description": "Mozzarella Fior di Latte / Spianata Piccante / nduja / pomidorki / pesto bazyliowe"
+      },
+      {
+        "name": "Gorgonzola e Pere",
+        "price": 52,
+        "description": "Mozzarella Fior di Latte / Gorgonzola DOP / karmelizowana gruszka / orzechy laskowe / miód"
+      },
+      {
+        "name": "Carbonara bianca",
+        "price": 49,
+        "description": "Mozzarella Fior di Latte / Pancetta / jajko pasteryzowane / czarny pieprz / oliwa"
+      }
+    ],
+    "Desery": [
+      {
+        "name": "Tiramisu z malinami",
+        "price": 22,
+        "description": "Klasyczny tiramisu z malinami i mascarpone"
+      },
+      {
+        "name": "Panna Cotta z owocami",
+        "price": 20,
+        "description": "Panna cotta z musem z mango i świeżymi owocami"
+      },
+      {
+        "name": "Tarta czekoladowa",
+        "price": 24,
+        "description": "Tarta z kremem czekoladowym i orzechami"
+      }
+    ]
+  }
+}

@@ -55,7 +55,7 @@ export default defineConfig({
       config: {
         debug: false,
         forward: ["dataLayer.push"],
-        ignoreUnused: true,
+        // ignoreUnused: true,
       },
     }),],
   vite: {

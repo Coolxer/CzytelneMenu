@@ -1,17 +1,118 @@
 ---
-import PageLayout from "@layouts/PageLayout.astro"
+import Layout from "@layouts/Layout.astro"
 import { type Meta } from "@components/core/MySEO.astro"
+
+import Footer from "@components/core/Footer.astro"
 
 const meta: Meta = {
   title: "Polityka prywatności",
-  description: "Zobacz w jakis sposób są przetwarzane Twoje dane osobowe.",
+  description: "Dowiedz się w jaki sposób są przetwarzane Twoje dane osobowe.",
   noindex: true,
   nofollow: true,
 }
 ---
 
-<PageLayout pageTitle="Polityka prywatności" meta={meta}>
-  <article
-    class="prose-h1:text-h1 prose-h2:text-h3 prose-h3:text-h4 prose-h4:text-h5 prose-h5:text-h5 prose-h6:text-h6 prose marker:text-black">
-  </article>
-</PageLayout>
+<Layout meta={meta}>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-landing-lightest py-2 shadow">
+    <div class="container mx-auto max-w-prose px-5">
+      <div class="flex w-full items-center justify-between">
+        <!-- Logo/nazwa restauracji -->
+        <a href="/" class="text-xl font-bold text-black no-underline">
+          CzytelneMenu
+        </a>
+        <a
+          href="#kontakt"
+          class="rounded-md bg-landing px-4 py-2 font-medium text-landing-darkest shadow transition-colors hover:bg-landing-dark hover:text-white">
+          Zapytaj o wdrożenie
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="py-6">
+    <div class="container mx-auto max-w-prose px-5">
+      <article class="prose marker:text-black">
+        <h1>Polityka Prywatności</h1>
+        <p>
+          Dbamy o Twoją prywatność i zależy nam na przejrzystości w zakresie
+          przetwarzania Twoich danych osobowych.
+        </p>
+
+        <h2>§ 1 Administrator danych</h2>
+        <p>
+          Administratorem Twoich danych osobowych jest [Twoja firma/nazwa], z
+          siedzibą w [adres], e-mail: [kontakt].
+        </p>
+
+        <h2>§ 2 Zakres i cel przetwarzania danych</h2>
+        <p>
+          Przetwarzamy dane osobowe, które podajesz w formularzu kontaktowym,
+          tj. imię, adres e-mail oraz treść zapytania. Dane te są wykorzystywane
+          wyłącznie w celu:
+        </p>
+        <ul>
+          <li>
+            odpowiedzi na Twoje zapytanie (art. 6 ust. 1 lit. a RODO – zgoda),
+          </li>
+          <li>
+            przedstawienia oferty, jeśli dotyczy (art. 6 ust. 1 lit. b RODO –
+            działania przed zawarciem umowy).
+          </li>
+        </ul>
+        <p>
+          Podanie danych jest dobrowolne, ale niezbędne do udzielenia
+          odpowiedzi.
+        </p>
+
+        <h2>§ 3 Okres przechowywania danych</h2>
+        <p>
+          Twoje dane będą przechowywane do czasu zakończenia korespondencji lub
+          przez okres do 12 miesięcy od ostatniego kontaktu – chyba że prawo
+          wymaga dłuższego przechowywania.
+        </p>
+
+        <h2>§ 4 Odbiorcy danych</h2>
+        <p>
+          Twoje dane mogą być udostępniane podmiotom wspierającym działanie
+          strony internetowej (np. dostawcom usług hostingowych), ale tylko w
+          zakresie niezbędnym do jej funkcjonowania. Hosting zapewnia Cloudflare
+          Pages, który posiada serwery w Europie.
+        </p>
+
+        <h2>§ 5 Prawa użytkownika</h2>
+        <p>Masz prawo do:</p>
+        <ul>
+          <li>dostępu do swoich danych,</li>
+          <li>sprostowania danych,</li>
+          <li>usunięcia danych,</li>
+          <li>ograniczenia przetwarzania,</li>
+          <li>wniesienia sprzeciwu wobec przetwarzania,</li>
+          <li>przenoszenia danych.</li>
+        </ul>
+        <p>
+          Masz także prawo do wniesienia skargi do Prezesa Urzędu Ochrony Danych
+          Osobowych.
+        </p>
+
+        <h2>§ 6 Pliki cookies i analityka</h2>
+        <p>Nie używamy plików cookies.</p>
+        <p>
+          Korzystamy z Simple Analytics – narzędzia do analizy ruchu na stronie,
+          które nie używa cookies, nie śledzi użytkowników i jest w pełni zgodne
+          z RODO.
+        </p>
+
+        <h2>§ 7 Zmiany w polityce prywatności</h2>
+        <p>
+          Polityka prywatności może być aktualizowana, o czym poinformujemy na
+          tej stronie.
+        </p>
+      </article>
+
+      DO OGARNIECIA
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
