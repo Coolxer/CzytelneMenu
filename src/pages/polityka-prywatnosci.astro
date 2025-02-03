@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro"
 import { type Meta } from "@components/core/MySEO.astro"
 
+import Header from "@components/core/Header.astro"
 import Footer from "@components/core/Footer.astro"
 
 const meta: Meta = {
@@ -14,21 +15,7 @@ const meta: Meta = {
 
 <Layout meta={meta}>
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-landing-lightest py-2 shadow">
-    <div class="container mx-auto max-w-prose px-5">
-      <div class="flex w-full items-center justify-between">
-        <!-- Logo/nazwa restauracji -->
-        <a href="/" class="text-xl font-bold text-black no-underline">
-          CzytelneMenu
-        </a>
-        <a
-          href="#kontakt"
-          class="rounded-md bg-landing px-4 py-2 font-medium text-landing-darkest shadow transition-colors hover:bg-landing-dark hover:text-white">
-          Zapytaj o wdrożenie
-        </a>
-      </div>
-    </div>
-  </header>
+  <Header />
 
   <main class="py-6">
     <div class="container mx-auto max-w-prose px-5">

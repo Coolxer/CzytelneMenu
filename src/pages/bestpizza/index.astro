@@ -3,7 +3,7 @@ import Layout from "@layouts/Layout.astro"
 import { type Meta, type Schema } from "@components/core/MySEO.astro"
 import { Icon } from "astro-icon/components"
 
-import data from "./data.json"
+import data from "./_data.json"
 import Footer from "@components/core/Footer.astro"
 
 const meta: Meta = {
@@ -48,6 +48,7 @@ const categories = Object.keys(menu)
         <!-- Call us -->
         <a
           href="tel:123456789"
+          aria-label="Zadzwoń i złóż zamówienie"
           class="rounded-md bg-bestpizza px-4 py-2 font-medium text-white shadow transition-colors hover:bg-bestpizza-dark">
           Zadzwoń: {data.firma.kontakt.telefon}
         </a>
@@ -90,6 +91,7 @@ const categories = Object.keys(menu)
               categories.map((category) => (
                 <a
                   href={`#${category}`}
+                  aria-label={"Przejdź do kategorii " + category}
                   class="bg-bestpizza-light px-4 py-2 text-black shadow transition-all hover:bg-bestpizza hover:text-white">
                   {category.replace("_", " ")}
                 </a>
@@ -152,11 +154,13 @@ const categories = Object.keys(menu)
             class="flex w-full flex-col items-stretch justify-start gap-4 sm:flex-row lg:flex-col">
             <a
               href="tel:123456789"
+              aria-label="Zadzwoń i zamów"
               class="rounded-md border-2 border-bestpizza bg-bestpizza px-4 py-2 text-center font-medium text-white shadow transition-colors hover:border-bestpizza-dark hover:bg-bestpizza-dark">
               Zadzwoń i zamów
             </a>
             <a
               href="#"
+              aria-label="Pobierz menu"
               class="rounded-md border-2 border-white px-4 py-2 text-center font-medium text-white shadow transition-colors hover:bg-white hover:text-black">
               Pobierz menu
             </a>
@@ -203,6 +207,7 @@ const categories = Object.keys(menu)
                   </span>
                   <a
                     href="tel:123456789"
+                    aria-label="Zadzwoń"
                     class="text-bestpizza underline hover:text-bestpizza-dark">
                     Zadzwoń
                   </a>

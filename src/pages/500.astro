@@ -2,6 +2,9 @@
 import { type Meta } from "@components/core/MySEO.astro"
 import Layout from "@layouts/Layout.astro"
 
+import Header from "@components/core/Header.astro"
+import Footer from "@components/core/Footer.astro"
+
 const meta: Meta = {
   title: "500 - Błąd serwera",
   description:
@@ -12,6 +15,25 @@ const meta: Meta = {
 ---
 
 <Layout meta={meta}>
-  <h1>500. Wewnętrzny błąd serwera.</h1>
-  <a href="/" class="">Wróć na stronę główną</a>
+  <Header />
+
+  <main>
+    <section class="py-8 pt-16">
+      <div class="container mx-auto max-w-prose px-5">
+        <div class="flex flex-col items-center justify-center gap-6">
+          <h1 class="text-center text-4xl font-bold md:text-5xl">
+            500. Wewnętrzny błąd serwera.
+          </h1>
+          <a
+            href="/"
+            aria-label="Wróć na stronę główną"
+            class="flex-1 rounded-md border-2 border-black bg-black px-4 py-2 text-center font-medium text-white shadow transition-colors hover:bg-transparent hover:text-black">
+            Wróć na stronę główną
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
 </Layout>

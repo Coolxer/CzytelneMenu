@@ -1,0 +1,35 @@
+---
+import { Icon } from "astro-icon/components"
+---
+
+<header class="sticky top-0 z-50 bg-landing-lightest py-2 shadow">
+  <div class="container mx-auto max-w-prose px-5">
+    <div class="flex w-full items-center justify-between gap-6">
+      <!-- Logo/nazwa restauracji -->
+      <a
+        href="/"
+        aria-label="Przejdź na stronę główną"
+        class="flex items-center gap-2 text-landing-darkest no-underline">
+        <Icon name="logo" class="text-3xl" />
+        <span class="hidden text-xl font-bold md:inline">CzytelneMenu</span>
+      </a>
+
+      <div class="flex gap-4">
+        <a
+          href="/bestpizza"
+          target="_blank"
+          aria-label="Zobacz przykładowe wdrożenie"
+          class="inline-block rounded-md bg-landing px-4 py-2 text-center font-medium text-landing-darkest shadow transition-colors hover:bg-landing-dark hover:text-white">
+          Zobacz przykład
+        </a>
+
+        <a
+          href="#kontakt"
+          aria-label="Zapytaj o wdrożenie"
+          class="rounded-md bg-black px-4 py-2 text-center font-medium text-white shadow transition-colors hover:bg-white hover:text-black">
+          Zapytaj o wdrożenie
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
