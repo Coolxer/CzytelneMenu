@@ -45,7 +45,7 @@ export default defineConfig({
   integrations: [react(), sitemap({
     filter: (page) =>
       page !== `${data.site.domain}/stylebook/` &&
-      page !== `${data.site.domain}/polityka-prywatnosci/`,
+      page !== `${data.site.domain}/polityka-prywatnosci/` && page !== `${data.site.domain}/bestpizza/`,
   }), tailwind({ applyBaseStyles: false }), icon({
       iconDir: "src/assets/icons",
       include: {
