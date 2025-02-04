@@ -51,13 +51,15 @@ export default defineConfig({
       include: {
         tabler: ["*"],
       },
-    }), partytown({
-      config: {
-        debug: false,
-        forward: ["dataLayer.push"],
-        // ignoreUnused: true,
-      },
-    }),],
+    }), 
+    // partytown({
+    //   config: {
+    //     debug: false,
+    //     forward: ["dataLayer.push"],
+    //     // ignoreUnused: true,
+    //   },
+    // })
+  ],
   vite: {
     resolve: {
       alias: {
@@ -65,19 +67,19 @@ export default defineConfig({
       },
     },
   },
-  server: {
-    port: 4321,
-    host: false,
-    headers: {
-      "Strict-Transport-Security":
-        "max-age=63072000; includeSubDomains; preload",
-      "X-Content-Type-Options": "nosniff",
-      "X-XSS-Protection": "0",
-      "X-Frame-Options": "SAMEORIGIN",
-      "Referrer-Policy": "strict-origin-when-cross-origin",
-      "Content-Security-Policy": "upgrade-insecure-requests",
-    },
-  },
+  // server: {
+  //   port: 4321,
+  //   host: false,
+  //   headers: {
+  //     "Strict-Transport-Security":
+  //       "max-age=63072000; includeSubDomains; preload",
+  //     "X-Content-Type-Options": "nosniff",
+  //     "X-XSS-Protection": "0",
+  //     "X-Frame-Options": "SAMEORIGIN",
+  //     "Referrer-Policy": "strict-origin-when-cross-origin",
+  //     "Content-Security-Policy": "upgrade-insecure-requests",
+  //   },
+  // },
   redirects: {},
   devToolbar: {
     enabled: false,

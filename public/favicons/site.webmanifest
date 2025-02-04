@@ -3,19 +3,30 @@
   "short_name": "CzytelneMenu",
   "icons": [
     {
-      "src": "/web-app-manifest-192x192.png",
+      "src": "/favicons/web-app-manifest-192x192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
+      "type": "image/png"
     },
     {
-      "src": "/web-app-manifest-512x512.png",
+      "src": "/favicons/web-app-manifest-512x512.png",
       "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/favicon-96x96.png",
+      "sizes": "96x96",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/favicons/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
     }
   ],
   "theme_color": "#fae588",
   "background_color": "#fae588",
-  "display": "standalone"
+  "display": "standalone",
+  "start_url": "/",
+  "id": "/"
 }
